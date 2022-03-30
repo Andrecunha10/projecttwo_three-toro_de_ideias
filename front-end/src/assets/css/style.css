@@ -1,0 +1,12 @@
+.nav-header{
+    background-color: #2B2626;
+}
+
+.nav-header .navbar-toggler{
+    background-color: #fff;
+    color: #fff;
+}
+
+.nav-header .show .nav-link{
+    border-bottom: #fff 1px solid;
+}
