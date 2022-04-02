@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Permanent+Marker&display=swap');
+
+:root {
+    --main-color: #2B2626;
+    --green:  #87F29F;
+    --yellow: #FCFF60;
+  }
+
 .nav-header{
-    background-color: #2B2626;
+    background-color: var(--main-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .nav-header .navbar-toggler{
@@ -9,4 +18,81 @@
 
 .nav-header .show .nav-link{
     border-bottom: #fff 1px solid;
+}
+
+.footer{
+    background-color: var(--main-color);
+}
+
+.footer-container{
+    display: flex;
+    gap: 10px;
+    flex-direction: column-reverse;
+    align-items: center;
+    min-width: 60px;
+}
+
+.footer-container div{
+    display: flex;
+    gap: 10px;
+}
+
+@media (min-width: 576px) {
+    .footer-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+}
+
+.font-pm{
+    font-family: 'Permanent Marker', sans-serif;
+}
+
+.font-ph{
+    font-family: 'Patrick Hand', sans-serif;
+}
+
+.font-20px{
+    font-size: 1.25rem;
+}
+.line-height-1{
+    line-height: 1;
+}
+
+.flex-gap{
+    gap: 1rem;
+}
+
+.post-it{
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bg-color-green{
+    background-color: var(--green);
+}
+.bg-color-yellow{
+    background-color: var(--yellow);
+}
+
+.rotate-5{
+    transform: rotate(-5deg);
+}
+.rotate5{
+    transform: rotate(5deg);
+}
+
+iframe{
+    max-width: 100%;
+}
+
+@media (min-width: 992px){
+    .pi-size{
+        width: 180px;
+        height: 180px;
+    }
+    .line-height-15{
+        line-height: 1.5;
+    }
 }
