@@ -1,14 +1,13 @@
 import { Header } from './header.js'
 import { Footer } from './footer.js'
-import { MainHome } from '../../pages/home'
 
 
-export function MainLayout(){
+export function MainLayout({ children }){
     return (
       <>
       <Header />
       <main>
-        <MainHome />
+        { children }
       </main>
       <Footer />
       </>

@@ -1,4 +1,6 @@
+import { MainLayout } from '../../components/layout'
 import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Lampada from '../../assets/img/logo_lampada.svg'
 import Brain from '../../assets/img/brain.jpg'
 import Attention from '../../assets/img/atencao.jpg'
@@ -7,6 +9,7 @@ import Head from '../../assets/img/head.jpg'
 
 export function MainHome(){
     return (
+      <MainLayout>
         <Container className='mt-4'>
           <section>
             <div className='text-center d-flex justify-content-center align-items-center flex-gap'>
@@ -58,14 +61,18 @@ export function MainHome(){
             <p className='font-ph font-20px mt-3 mb-4 mb-lg-0'>Na tela colaboração, serão apresentados problemas e oportunidades. Você colabora com a uma idéia para melhorar este problema. Simples assim.</p>
           </div>
           <div className='d-flex gap-5 justify-content-center flex-1'>
-            <div className='post-it p-2 font-20px bg-color-green rotate-5 pi-size'>
-            <p className='font-pm fw-bold text-center mb-1'>Problema 1</p>
-            <p className='font-ph mb-0 line-height-1 line-height-15'>Sua ajuda é fundamental. E pode melhorar nossa empresa</p>
-            </div>
-            <div className='post-it p-2 font-20px bg-color-yellow rotate5 pi-size'>
-            <p className='font-pm fw-bold text-center mb-1'>Problema 2</p>
-            <p className='font-ph mb-0 line-height-1 line-height-15'>Colabore e transferme nossa organização</p>
-            </div>
+            <Link className='text-decoration-none' to={'/colaboracao'}>
+              <div className='post-it p-2 font-20px bg-color-green rotate-5 pi-size'>
+              <p className='font-pm fw-bold text-center mb-1'>Problema 1</p>
+              <p className='font-ph mb-0 line-height-1 line-height-15'>Sua ajuda é fundamental. E pode melhorar nossa empresa</p>
+              </div>
+            </Link>
+            <Link className='text-decoration-none' to={'/colaboracao'}>
+              <div className='post-it p-2 font-20px bg-color-yellow rotate5 pi-size'>
+              <p className='font-pm fw-bold text-center mb-1'>Problema 2</p>
+              <p className='font-ph mb-0 line-height-1 line-height-15'>Colabore e transferme nossa organização</p>
+              </div>
+            </Link>
           </div>
           </section>
           <section>
@@ -74,5 +81,6 @@ export function MainHome(){
               
           </section>
         </Container>
+      </MainLayout>
     )
   }

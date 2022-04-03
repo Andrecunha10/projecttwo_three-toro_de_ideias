@@ -3,12 +3,24 @@
 :root {
     --main-color: #2B2626;
 }
+
+html, body, #root {
+    height: 100%;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+}
+#root > main {
+    flex: 1;
+}
+
 h1, h2, h3, p, a{
     color: var(--main-color);
 }
 
 .nav-header{
-    background-color: var(--main-color);
+    background: linear-gradient(94.37deg, rgba(43, 38, 38, 0.85) 0.43%, #2B2628 60%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Patrick Hand', sans-serif;
     font-size: 1.5rem;
@@ -24,7 +36,7 @@ h1, h2, h3, p, a{
 }
 
 .footer{
-    background-color: var(--main-color);
+    background: linear-gradient(94.37deg, rgba(43, 38, 38, 0.85) 0.43%, #2B2628 60%);
 }
 
 .footer-container{
@@ -69,4 +81,8 @@ h1, h2, h3, p, a{
 
 .flex-1{
     flex: 1;
+}
+
+iframe{
+    max-width: 100%;
 }
