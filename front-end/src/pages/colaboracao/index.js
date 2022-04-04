@@ -6,7 +6,7 @@ export function PageColaboracao() {
     return(
         <MainLayout>
             <h1 className='font-pm fw-bold mt-4 text-center'>Colaboração</h1>
-            <div className='display-grid gap-5 justify-content-center mt-5'>
+            <div className='display-grid gap-4 gap-md-5 justify-content-center mt-5'>
                 <Link className='text-decoration-none' to={'/problema'}>
                     <div className='post-it p-2 font-20px bg-color-green rotate-5 pi-size'>
                         <p className='font-pm fw-bold text-center mb-1'>Problema 1</p>
