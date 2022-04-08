@@ -1,37 +1,50 @@
-import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import { MainLayout } from "../../components/layout";
+import { PostItCol } from "../../components/Post_it";
 
+const problems = [
+    {
+        id: 1,
+        name: 'Hora Extra',
+        shortDescription: 'Elevado custo com horas extras',
+        color: 'bg-color-green',
+        rotate: 'rotate-5'
+    },
+    {
+        id: 2,
+        name: 'Reclamação Clientes',
+        shortDescription: 'Aumento do número de reclamações de clientes',
+        color: 'bg-color-yellow',
+        rotate: 'rotate5'
+    },
+    {
+        id: 3,
+        name: 'Atrasos na Chegada',
+        shortDescription: 'Funcinários chegam atrasados no posto de trabalho',
+        color: 'bg-color-pink',
+        rotate: 'rotate-5'
+    },
+    {
+        id: 4,
+        name: 'Produto X',
+        shortDescription: 'O que podemos melhorar no Produto X?',
+        color: 'bg-color-blue',
+        rotate: 'rotate5'
+    },   
+]
 
 export function PageColaboracao() {
     return(
         <MainLayout>
-            <h1 className='font-pm fw-bold mt-4 text-center'>Colaboração</h1>
-            <div className='display-grid gap-4 gap-md-5 justify-content-center mt-5'>
-                <Link className='text-decoration-none' to={'/problema'}>
-                    <div className='post-it p-2 font-20px bg-color-green rotate-5 pi-size'>
-                        <p className='font-pm fw-bold text-center mb-1'>Problema 1</p>
-                        <p className='font-ph mb-0 line-height-1 line-height-15'>Sua ajuda é fundamental. E pode melhorar nossa empresa</p>
-                    </div>
-                </Link>
-                <Link className='text-decoration-none' to={'/problema'}>
-                    <div className='post-it p-2 font-20px bg-color-yellow rotate5 pi-size'>
-                        <p className='font-pm fw-bold text-center mb-1'>Problema 2</p>
-                        <p className='font-ph mb-0 line-height-1 line-height-15'>Colabore e transferme nossa organização</p>
-                    </div>
-                </Link>
-                <Link className='text-decoration-none' to={'/problema'}>
-                    <div className='post-it p-2 font-20px bg-color-pink rotate-5 pi-size'>
-                        <p className='font-pm fw-bold text-center mb-1'>Problema 3</p>
-                        <p className='font-ph mb-0 line-height-1 line-height-15'>Sua ajuda é fundamental. E pode melhorar nossa empresa</p>
-                    </div>
-                </Link>
-                <Link className='text-decoration-none' to={'/problema'}>
-                    <div className='post-it p-2 font-20px bg-color-blue rotate5 pi-size'>
-                        <p className='font-pm fw-bold text-center mb-1'>Problema 4</p>
-                        <p className='font-ph mb-0 line-height-1 line-height-15'>Colabore e transferme nossa organização</p>
-                    </div>
-                </Link>
-            </div>
+            <Container>
+                <h1 className='font-pm fw-bold mt-4 text-center'>Colaboração</h1>
+                <div className='display-grid gap-4 gap-md-5 justify-content-center mt-5'>
+                    {problems.map(problem =>(
+                        <PostItCol key={problem.id} problem={problem}/>
+                    ))
+                    }
+                </div>
+            </Container>
         </MainLayout>
     )
 }

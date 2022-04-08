@@ -52,6 +52,12 @@
     z-index:5;
 }
 
+.form-postit-ta:focus .post-it{
+    transform: scale(1.2);
+    position:relative;
+    z-index:5;
+}
+
 .display-grid{
     display: grid;
     grid-template-columns: auto auto;
@@ -59,6 +65,17 @@
 
 .display-grid-problem{
     display: grid;
+}
+
+.form-postit{
+    background-color: transparent;
+    border: none;
+}
+
+.form-postit-ta{
+    width: 100%;
+    height: 170px;
+    resize: none;
 }
 
 

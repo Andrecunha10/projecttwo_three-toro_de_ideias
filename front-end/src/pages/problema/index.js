@@ -29,8 +29,10 @@ export function PageProblem(){
             </div>
             <h2 className='font-pm fw-bold mt-4'>Deixe a sua sugestão</h2>
                 <div className='post-it p-3 font-20px bg-color-green rotate-2 pi-problem-size mt-4'>
-                    <textarea id="form-message" className="font-ph mb-1 line-height-1" name="message" placeholder="Mensagem:*" maxlength="225" required></textarea>
-                    <p className='font-pm fw-bold text-center position-absolute bottom-0 end-0 pe-3'>André Cunha - RH</p>
+                    <form action="">
+                        <textarea id="form-message" className="font-ph mb-1 line-height-1 form-postit form-postit-ta" name="message" placeholder="Mensagem:*" maxLength="225" required></textarea>
+                        <p className='font-pm fw-bold text-center position-absolute bottom-0 end-0 pe-3'>André Cunha - RH</p>
+                    </form>
                 </div>
             </Container>
         </MainLayout>
