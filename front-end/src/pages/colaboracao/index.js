@@ -10,7 +10,7 @@ export function PageColaboracao() {
     const [loading, setLoading] = useState(true)
     const [errorMsg, setErrorMsg] = useState()
     useEffect(() => {
-        fetch('http://localhost:3001/collaborations')
+        fetch(`${process.env.REACT_APP_API_URL}/collaborations`)
             .then((response) => response.json())
             .then((data) => { 
                 setProblems(data)
