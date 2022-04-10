@@ -27,8 +27,8 @@ export function PageProblem(){
                     <p className='font-pm fw-bold text-center position-absolute bottom-0 end-0 pe-3'>João - Mkt</p>
                 </div>  
             </div>
-            <h2 className='font-pm fw-bold mt-4'>Deixe a sua sugestão</h2>
-                <div className='post-it p-3 font-20px bg-color-green pi-problem-size-form mt-4'>
+            <h2 className='font-pm fw-bold mt-5'>Deixe a sua sugestão</h2>
+                <div className='post-it p-3 font-20px bg-color-green pi-problem-size-form mt-4 m-auto'>
                     <form action="" className="d-grid gap-3">
                         <textarea id="form-message" className="font-ph mb-1 line-height-1 form-postit form-postit-ta" name="message" placeholder="Sua Sugestão" maxLength="225" required></textarea>
                         <div className="d-flex gap-1 font-pm fw-bold text-center">
