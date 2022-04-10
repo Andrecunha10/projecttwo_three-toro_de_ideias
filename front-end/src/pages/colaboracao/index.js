@@ -31,7 +31,7 @@ export function PageColaboracao() {
                 {errorMsg && (
                     <Alert variant="info" className="text-center my-4">{errorMsg}</Alert>
                 )}
-                <div className='display-grid gap-4 gap-md-5 justify-content-center mt-5'>
+                <div className='colaboration-css display-grid gap-4 gap-md-5 justify-content-center mt-5'>
                     {problems.map(problem =>(
                         <PostItCol key={problem.id} problem={problem}/>
                     ))
