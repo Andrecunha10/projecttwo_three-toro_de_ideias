@@ -46,14 +46,11 @@ export function PageProblem(){
                         <p className='font-ph font-20px mt-3'>{problem?.description}</p>
                         <p className='font-ph font-20px'><strong>Área de Atuação:</strong> {problem?.departament}</p>
                         <h2 className='font-pm fw-bold'>Sugestões do Time</h2>
-                        <div className="colaboration-css display-grid-problem justify-content-center mt-4 gap-4">
-                            {console.log('teste', problem.problems)}
+                        
                             <PostItProblem pb={problem.problems}/>
                             
-                          
-                        </div>
                         <h2 className='font-pm fw-bold mt-5'>Deixe a sua sugestão</h2>
-                            <div className='post-it p-3 font-20px bg-color-green pi-problem-size-form mt-4 m-auto'>
+                            <div className='post-it p-3 font-20px bg-color-blue pi-problem-size-form mt-4 m-auto'>
                                 <form action="" className="d-grid gap-3">
                                     <textarea id="form-message" className="font-ph mb-1 line-height-1 form-postit form-postit-ta" name="message" placeholder="Sua Sugestão" maxLength="225" required></textarea>
                                     <div className="d-flex gap-1 font-pm fw-bold text-center">
