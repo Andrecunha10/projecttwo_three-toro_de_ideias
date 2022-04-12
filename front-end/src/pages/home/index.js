@@ -77,7 +77,7 @@ export function MainHome(){
           </section>
           <section>
               <h2 className='font-pm fw-bold text-center mt-4' id='brainstorm'>Saiba mais sobre o brainstorm</h2>
-              <iframe className="d-block mx-auto aling-center mt-4" width="560" height="315" src="https://www.youtube.com/embed/_M3thqTP0aE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe className="d-block mx-auto aling-center mt-4" width="560" height="315" src="https://www.youtube.com/embed/_M3thqTP0aE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               
           </section>
         </Container>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Alert, Container } from "react-bootstrap";
 import { MainLayout } from "../../components/layout";
 import { Loading } from "../../components/loading";
-import { PostItCol } from "../../components/post_it";
+import { PostItCol } from "../../components/postit";
 
 
 export function PageColaboracao() {

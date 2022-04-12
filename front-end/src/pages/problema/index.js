@@ -3,7 +3,7 @@ import { Alert, Button, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { MainLayout } from "../../components/layout";
 import { Loading } from "../../components/loading";
-import { PostItProblem } from "../../components/post_it/problems";
+import { PostItProblem } from "../../components/postit/problems";
 import { PageNotFound } from "../notfound";
 
 export function PageProblem(){
