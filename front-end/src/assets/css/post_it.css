@@ -126,8 +126,7 @@
     z-index:5;
 }
 
-
-.post-it:focus{
+.post-it:hover{
     transform: scale(1.2);
     position:relative;
     z-index:5;
