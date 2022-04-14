@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Alert, Button, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { MainLayout } from "../../components/layout";
@@ -12,24 +12,24 @@ export function PageProblem(){
     const [problem, setProblem] = useState()
     const [loading, setLoading] = useState(true)
     const [errorMsg, setErrorMsg] = useState()
-    useEffect(() => {
-        const fetchProblem = async () => {
-            try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/collaborations/${params.id}?_embed=problems`)
-                if(!response.ok) {
-                    throw new Error('Response not ok.')
-                }
-                const data = await response.json()
-                setProblem(data)
-                setLoading(false)
-            } catch (error) {
-                const message = error.message === 'Response not ok.' ? '404' : 'Falha ao carregar a página. Tente novamente em instantes.'
-                setErrorMsg(message)
-                setLoading(false)
+    const fetchProblem = useCallback( async () => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/collaborations/${params.id}?_embed=problems`)
+            if(!response.ok) {
+                throw new Error('Response not ok.')
             }
+            const data = await response.json()
+            setProblem(data)
+            setLoading(false)
+        } catch (error) {
+            const message = error.message === 'Response not ok.' ? '404' : 'Falha ao carregar a página. Tente novamente em instantes.'
+            setErrorMsg(message)
+            setLoading(false)
         }
-        fetchProblem()
     }, [params.id])
+    useEffect(() => {
+        fetchProblem()
+    }, [fetchProblem])
     if (loading){
         return <Loading />
     }
@@ -49,9 +49,8 @@ export function PageProblem(){
                         <h2 className='font-pm fw-bold'>Sugestões do Time</h2>
                         
                             <PostItProblem pb={problem.problems}/>
-                            
-                        <h2 className='font-pm fw-bold mt-5'>Deixe a sua sugestão</h2>
-                            <PostItForm />
+
+                            <PostItForm collaborationId={params.id} onRegistrer={fetchProblem}/>
                         </>
                     )}
                     
