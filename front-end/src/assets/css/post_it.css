@@ -3,6 +3,7 @@
     --yellow: #FCFF60;
     --pink: #FF8DF4;
     --blue: #67E4FF;
+    --var: #2B2626;
 }
 
 .post-it{
@@ -144,6 +145,10 @@
 .form-postit{
     background-color: transparent;
     border: none;
+    color: #2B2626;
+}
+.form-postit::placeholder{
+    color: #2B2626;
 }
 
 .form-postit-ta{

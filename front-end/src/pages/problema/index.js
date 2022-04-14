@@ -3,6 +3,7 @@ import { Alert, Button, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { MainLayout } from "../../components/layout";
 import { Loading } from "../../components/loading";
+import { PostItForm } from "../../components/postit/form";
 import { PostItProblem } from "../../components/postit/problems";
 import { PageNotFound } from "../notfound";
 
@@ -50,16 +51,7 @@ export function PageProblem(){
                             <PostItProblem pb={problem.problems}/>
                             
                         <h2 className='font-pm fw-bold mt-5'>Deixe a sua sugestão</h2>
-                            <div className='post-it p-3 font-20px bg-color-blue pi-problem-size-form mt-4 m-auto'>
-                                <form action="" className="d-grid gap-3">
-                                    <textarea id="form-message" className="font-ph mb-1 line-height-1 form-postit form-postit-ta" name="message" placeholder="Sua Sugestão" maxLength="225" required></textarea>
-                                    <div className="d-flex gap-1 font-pm fw-bold text-center">
-                                        <input id="form-name" type="text" className="w-100 form-postit" placeholder="Seu Nome" required />
-                                        <input id="form-name" type="text" className="w-100 form-postit" placeholder="Dep." required />
-                                    </div>
-                                    <Button variant="dark">Sugerir</Button>
-                                </form>
-                            </div>
+                            <PostItForm />
                         </>
                     )}
                     
