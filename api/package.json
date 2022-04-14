@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "json-server --watch db.json --port $PORT --host 0.0.0.0",
-    "start-dev": "cross-env-shell PORT=3001 npm run start"
+    "start-dev": "json-server --watch db.json --port 3001"
   },
   "keywords": [],
   "author": "",
