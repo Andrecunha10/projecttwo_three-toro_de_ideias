@@ -6,4 +6,4 @@ Este trabalho foi desenvolvido como projeto de estudos no Curso de Full Stack do
 Acesse a página de demonstração:
 * [TORO DE IDEIAS!](https://torodeideias.netlify.app/)
 
-Desenvovido por [André Luiz da Cunha](https://github.com/Andrecunha10/) 😊
+Desenvovido por [André Luiz da Cunha](https://github.com/Andrecunha10/)
