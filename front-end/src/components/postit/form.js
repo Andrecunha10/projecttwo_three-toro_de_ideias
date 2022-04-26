@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Alert, Button } from "react-bootstrap"
+import { createSuggestion } from "../../services/suggestions.service"
 
 const initialFormData = {
     userMessage: '',
@@ -7,7 +8,7 @@ const initialFormData = {
     userDep: ''
 }
 
-export function PostItForm( {collaborationId, onRegistrer}){
+export function PostItForm( {problemId, onRegistrer}){
     const [formData, setFormData] = useState(initialFormData)
     const [success, setSuccess] = useState(false)
     const [submiting, setSubimiting] = useState(false)
@@ -25,17 +26,11 @@ export function PostItForm( {collaborationId, onRegistrer}){
         try {
             setSubimiting(true)
             setErrorMsg(undefined)
-            await fetch(`${process.env.REACT_APP_API_URL}/problems`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    message: formData.userMessage,
-                    name: formData.userName,
-                    departament: formData.userDep,
-                    collaborationId: parseInt(collaborationId)
-                }),
-                headers: {
-                    'content-type': 'application/json'
-                }
+            await createSuggestion({
+                message: formData.userMessage,
+                name: formData.userName,
+                departament: formData.userDep,
+                problemId: parseInt(problemId) 
             })
             setSuccess(true)
             setFormData(initialFormData)

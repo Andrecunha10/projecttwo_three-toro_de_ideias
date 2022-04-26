@@ -3,6 +3,7 @@ import { Alert, Container } from "react-bootstrap";
 import { MainLayout } from "../../components/layout";
 import { Loading } from "../../components/loading";
 import { PostItCol } from "../../components/postit";
+import { getProblems } from "../../services/problems.service";
 
 
 export function PageColaboracao() {
@@ -10,15 +11,16 @@ export function PageColaboracao() {
     const [loading, setLoading] = useState(true)
     const [errorMsg, setErrorMsg] = useState()
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/collaborations`)
-            .then((response) => response.json())
-            .then((data) => { 
+        const fetchProblems = async () => {
+            try { 
+                const data = await getProblems()
                 setProblems(data)
-            })
-            .catch(() => {
+            } catch {
                 setErrorMsg('Falha ao carregar a página. Tente novamente em instantes.')
-            })
-            .finally(() => setLoading(false))
+            }
+            setLoading(false)
+        }
+        fetchProblems()
     }, [])
     
     return(

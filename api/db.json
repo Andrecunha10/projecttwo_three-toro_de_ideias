@@ -1,5 +1,5 @@
 {
-  "collaborations": [
+  "problems": [
     {
       "name": "Hora Extra",
       "shortDescription": "Elevado custo com horas extras",
@@ -29,34 +29,48 @@
       "id": 4
     }
   ],
-  "problems": [
+  "suggestions": [
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "André Cunha",
       "departament": "Dev",
-      "collaborationId": 1,
+      "problemId": 1,
       "id": 1
     },
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "Chico",
       "departament": "Mkt",
-      "collaborationId": 1,
+      "problemId": 1,
       "id": 2
     },
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "André Cunha",
       "departament": "Dev",
-      "collaborationId": 1,
+      "problemId": 1,
       "id": 3
     },
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "Chico",
       "departament": "Mkt",
-      "collaborationId": 1,
+      "problemId": 1,
       "id": 4
+    },
+    {
+      "message": "Eu prefiro ser, esta metamorfose ambulante.",
+      "name": "Raul Seixas",
+      "departament": "TI",
+      "problemId": 1,
+      "id": 5
+    },
+    {
+      "message": "Eu vou, mudar tudo que não me comvém.",
+      "name": "Chorão",
+      "departament": "CB",
+      "problemId": 2,
+      "id": 6
     }
   ]
 }
