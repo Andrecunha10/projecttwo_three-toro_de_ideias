@@ -6,6 +6,7 @@ import Brain from '../../assets/img/brain.jpg'
 import Attention from '../../assets/img/atencao.jpg'
 import Group from '../../assets/img/grupo.jpg'
 import Head from '../../assets/img/head.jpg'
+import styled from 'styled-components'
 
 export function MainHome(){
     return (
@@ -84,3 +85,7 @@ export function MainHome(){
       </MainLayout>
     )
   }
+
+  const styledIframe = styled.iframe`
+    max-width: 100%;
+  `

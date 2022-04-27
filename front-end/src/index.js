@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/style.css'
-import './assets/css/post_it.css'
+import './components/postit/post_it.css'
 import { BrowserRouter } from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>

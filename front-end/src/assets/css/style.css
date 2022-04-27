@@ -19,47 +19,6 @@ h1, h2, h3, p, a{
     color: var(--main-color);
 }
 
-.nav-header{
-    background: linear-gradient(94.37deg, rgba(43, 38, 38, 0.85) 0.43%, #2B2628 60%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.5rem;
-}
-
-.nav-header .navbar-toggler{
-    background-color: #fff;
-    color: #fff;
-}
-
-.nav-header .show .nav-link{
-    border-bottom: #fff 1px solid;
-}
-
-.footer{
-    background: linear-gradient(94.37deg, rgba(43, 38, 38, 0.85) 0.43%, #2B2628 60%);
-}
-
-.footer-container{
-    display: flex;
-    gap: 10px;
-    flex-direction: column-reverse;
-    align-items: center;
-    min-width: 60px;
-}
-
-.footer-container div{
-    display: flex;
-    gap: 10px;
-}
-
-
-@media (min-width: 576px) {
-    .footer-container {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-}
-
 .font-pm{
     font-family: 'Permanent Marker', sans-serif;
 }
