@@ -16,6 +16,7 @@ export function Header() {
               <Nav className='ms-auto'>
                 <Nav.Link as={Link} to='/' className='text-white'>HOME</Nav.Link>
                 <Nav.Link as={Link} to='/colaboracao' className='text-white'>COLABORAÇÃO</Nav.Link>
+                <Nav.Link as={Link} to='/login' className='text-white'>LOGIN</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
