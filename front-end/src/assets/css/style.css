@@ -19,6 +19,9 @@ h1, h2, h3, p, a{
     color: var(--main-color);
 }
 
+.bg-main-color{
+    background-color: var(--main-color);
+}
 .font-pm{
     font-family: 'Permanent Marker', sans-serif;
 }
@@ -30,6 +33,11 @@ h1, h2, h3, p, a{
 .font-20px{
     font-size: 1.25rem;
 }
+
+.font-24px{
+    font-size: 1.5rem;
+}
+
 .line-height-1{
     line-height: 1;
 }
@@ -40,6 +48,28 @@ h1, h2, h3, p, a{
 
 .flex-1{
     flex: 1;
+}
+.offcanvas-end{
+    width: 100%;
+}
+
+.navbar-toggler:focus, .btn-check:focus+.btn, .btn:focus{
+    box-shadow: none;
+}
+.navbar-light .navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler{
+    font-size: 2rem;
+}
+
+.btn-close{
+    opacity: 1;
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url('../../../public/hamburguer_menu_vector3.png');
 }
 
 iframe{

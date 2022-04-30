@@ -32,5 +32,6 @@ const StyledCol = styled(Col)`
     @media (min-width: 992px) {
         :before, :after {
       display: none;
-    }
+        }
+}
 `
