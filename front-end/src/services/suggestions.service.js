@@ -1,5 +1,7 @@
+import { apiUrl } from "./api.service"
+
 export const createSuggestion = async (suggestionData) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/suggestions`, {
+    const response = await fetch(`${apiUrl}/suggestions`, {
         method: 'POST',
         body: JSON.stringify(suggestionData),
         headers: {

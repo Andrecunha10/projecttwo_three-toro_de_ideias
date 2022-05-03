@@ -1,5 +1,7 @@
+import { apiUrl } from "./api.service"
+
 export const getProblems = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/problems`)
+    const response = await fetch(`${apiUrl}/problems`)
         if(!response.ok) {
             throw new Error('Response not ok.')
         }
@@ -7,7 +9,7 @@ export const getProblems = async () => {
 }
 
 export const getProblemsById = async (problemId) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/problems/${problemId}?_embed=suggestions`)
+    const response = await fetch(`${apiUrl}/problems/${problemId}?_embed=suggestions`)
         if(!response.ok) {
             throw new Error('Response not ok.')
         }
