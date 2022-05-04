@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login } from "../../services/users.service";
+import { userLogin } from "../../store/user/user.actions";
 
 export function LoginForm (){
     const [formData, setFormData] = useState({
@@ -16,18 +18,16 @@ export function LoginForm (){
         })
     }
     const dispatch =  useDispatch()
+    const navigate = useNavigate()
+
     const handleSubmit = async (event) =>{
         event.preventDefault()
         try{
             const userData = await login(formData)
             
-            //END TO REDUX
-            const action = {
-                type: 'USER_LOGIN',
-                payload: userData
-            }
-            console.log(action)
-            dispatch(action)
+            //SEND TO REDUX
+            dispatch(userLogin(userData))
+            navigate('/dashboard')
         } catch (error){
             console.error(error)
             if (error.message === 'Credentias invalid.') {

@@ -2,8 +2,11 @@ import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import Logo from '../../assets/img/toro_ideias_menu.svg'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { selectUserIsLoggedIn } from '../../store/user/user.selectors'
+import { useSelector } from 'react-redux'
 
 export function Header() {
+  const userIsLoggedIn = useSelector(selectUserIsLoggedIn)
   return(
     <header>
       <NavbarStyled bg="light" expand="sm" className="mb-3">
@@ -22,7 +25,12 @@ export function Header() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link as={Link} to='/' className='text-white font-24px border-bottom border-white'>Home</Nav.Link>
                   <Nav.Link as={Link} to='/colaboracao' className='text-white font-24px border-bottom border-white'>Colaboração</Nav.Link>
-                  <Nav.Link as={Link} to='/login' className='text-white font-24px border-bottom border-white'>Login</Nav.Link>
+                  {userIsLoggedIn ? (
+                    <Nav.Link as={Link} to='/dashboard' className='text-white font-24px border-bottom border-white'>Dashboard</Nav.Link>
+                  ) : (
+                    <Nav.Link as={Link} to='/login' className='text-white font-24px border-bottom border-white'>Login</Nav.Link>
+                  )}
+                  
                 </Nav> 
               </Offcanvas.Body>
             </Navbar.Offcanvas>

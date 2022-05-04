@@ -1,25 +1,31 @@
 import { CloseButton, Nav } from "react-bootstrap"
+import { useSelector } from "react-redux"
 import styled from "styled-components"
+import { selectUser } from "../../store/user/user.selectors"
 import { SidebarItens } from "./sidebaritem"
 
 const menuItens = [
     {
         to: '/dashboard',
-        text: 'Dashboard'
+        text: 'Dashboard',
+        userTypes:[1, 2]
     },
     {
         to: '/dashboard/problemas',
-        text: 'Problemas'
+        text: 'Problemas',
+        userTypes:[1]
     }
 ]
 
 export function Sidebar ({isOpen, onClose}) {
+    const {type} = useSelector(selectUser)
+    const filterMenuItens = menuItens.filter(item => item.userTypes.includes(type))
     return (
         <SidebarStyled className="text-white d-flex flex-column p-3" isOpen={isOpen}>
             <CloseButton variant="white"  className='ms-auto d-md-none' onClick={onClose} />
             <p className="h1 font-pm text-white">Toró de Ideias!</p>
             <Nav variant="pills" className="flex-column">
-                {menuItens.map((item, index) => (
+                {filterMenuItens.map((item, index) => (
                     <SidebarItens key={index} item={item}/>
                 ))}
             </Nav>
