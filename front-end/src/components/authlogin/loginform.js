@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { login } from "../../services/users.service";
 
@@ -14,10 +15,19 @@ export function LoginForm (){
             [event.target.name]: event.target.value
         })
     }
+    const dispatch =  useDispatch()
     const handleSubmit = async (event) =>{
         event.preventDefault()
         try{
-            await login(formData)
+            const userData = await login(formData)
+            
+            //END TO REDUX
+            const action = {
+                type: 'USER_LOGIN',
+                payload: userData
+            }
+            console.log(action)
+            dispatch(action)
         } catch (error){
             console.error(error)
             if (error.message === 'Credentias invalid.') {
