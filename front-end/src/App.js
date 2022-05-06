@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { PageColaboracao } from "./pages/colaboracao";
 import { DashboardPage } from "./pages/dashboard";
+import { PageManageProblems } from "./pages/gerencieproblemas";
 import { MainHome } from "./pages/home";
 import { LoginPage } from "./pages/login";
 import { PageNotFound } from "./pages/notfound";
@@ -13,6 +14,7 @@ function App() {
       <Route path="/colaboracao" element={<PageColaboracao/>} />
       <Route path="/problema/:id" element={<PageProblem/>} />
       <Route path="/dashboard" element={<DashboardPage />}/>
+      <Route path="/dashboard/problemas" element={<PageManageProblems/>} />
       <Route path="/login" element={<LoginPage />}/>
       <Route path='*' element={<PageNotFound />} />
     </Routes>

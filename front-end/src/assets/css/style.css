@@ -77,6 +77,19 @@ h1, h2, h3, p, a{
     border-color: var(--bs-dark);
 }
 
+.btn-primary {
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+}
+td button{
+    width: 65px;
+}
+
 iframe{
     max-width: 100%;
 }
