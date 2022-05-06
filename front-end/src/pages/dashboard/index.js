@@ -21,3 +21,26 @@ export function DashboardPage() {
         </LayoutDashboard>
     )
 }
+
+// userData ? (
+//     <LayoutDashboard>
+//         <Container fluid>
+//             <h1 className="font-ph mt-4">Bem vindo(a) {user.name}</h1>
+//             {user.type === 1 ? (
+//                 <div>
+//                     <p className="font-ph font-20px">Utilize o menu para gerenciar os dados do site.</p>
+//                     <p className="font-ph font-20px">Você pode editar seus dados cliando sobre o seu nome.</p>
+//                 </div>
+//             ) : (
+//                 <p className="font-ph font-20px">Você pode editar seus dados cliando sobre o seu nome.</p>
+//             )}
+//         </Container>
+//     </LayoutDashboard>
+// ) : (
+//     <LayoutDashboard>
+//         <Container fluid>
+//             <h1 className="font-ph mt-4">É necessário estar logado para continuar nesta página</h1>
+//             <p className="font-ph font-20px"><Link to='/login'>Clique aqui</Link> para realizar o login ou se cadastrar</p>
+//         </Container>
+//     </LayoutDashboard>
+// )

@@ -25,7 +25,7 @@ export function TopBar ({onOpen}) {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={onOpen}/>
                     <Nav className="ms-auto">
                         <Dropdown align='end'>
-                            <Dropdown.Toggle variant="transparent" className="text-white font-20px">{user.nickname}</Dropdown.Toggle>
+                            <Dropdown.Toggle variant="transparent" className="text-white font-20px">{user.nickname || user.name}</Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item>Alterar Dados</Dropdown.Item>
                                 <Dropdown.Item onClick={handleLogout}>Sair</Dropdown.Item>

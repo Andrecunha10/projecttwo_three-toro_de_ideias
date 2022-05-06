@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { cadUser } from "../../services/caduser.service";
+import { userLogin } from "../../store/user/user.actions";
 
 export function CadForm () {
     const [formData, setFormData] = useState({
@@ -7,18 +12,77 @@ export function CadForm () {
         nickname: '',
         departament: '',
         email: '',
-        password: ''
+        password: '',
+        type: 2
     })
+    const [submiting, setSubmiting] = useState({
+        required: true,
+        disabled: false
+    })
+
+    const notNickname = () => {
+        if (submiting.required === true) {
+            setSubmiting({
+                required: false,
+                disabled: true
+            })
+            setFormData({
+                ...formData,
+                nickname:''
+            })
+        } else{
+            setSubmiting({
+                required: true,
+                disabled: false
+            })
+        }
+        
+    }
+
     const handleChange = (event) => {
         setFormData({
             ...formData,
             [event.target.name]: event.target.value
         })
     }
-    const handleSubmit = (event) =>{
+
+    const dispatch =  useDispatch()
+    const navigate = useNavigate()
+
+    const handleSubmit = async (event) =>{
+        let newFormData = formData
         event.preventDefault()
-        console.log(formData)
-    }
+        if (formData.nickname === '') {
+            const setNickname = formData.name.split(' ')
+            newFormData ={
+                ...formData,
+                nickname: setNickname[0]
+            }    
+        } 
+        try{
+            const userData= await cadUser(newFormData)
+            dispatch(userLogin(userData))
+            navigate('/dashboard')
+
+        } catch (error){
+            console.error(error)
+            switch(error.message){
+                case 'Email already exists':
+                    return toast.info('E-mail já cadastrado', {
+                        theme: "colored"
+                    })
+                case 'Password is too short':
+                    return toast.info('Senha deve conter pelo menos 4 caracteres', {
+                        theme: "colored"
+                    })
+                default:
+                    return toast.error('Falha ao fazer cadastro. Tente novamente', {
+                        theme: "colored"
+                    })
+            }
+        }
+     }
+
     return (
         <Form onSubmit={handleSubmit}>
             <h3 className="font-pm">Cadastre-se</h3>
@@ -38,10 +102,17 @@ export function CadForm () {
                 <Form.Control 
                     type="text" 
                     placeholder="Apelido ou nome ou sobrenome" 
-                    required
+                    required={submiting.required}
                     name="nickname"
                     value={formData.nickname}
                     onChange={handleChange}
+                    disabled={submiting.disabled}
+                />
+                <Form.Check 
+                    type="switch"
+                    id="custom-switch"
+                    label="Não informar apelido"
+                    onChange={notNickname}
                 />
             </Form.Group>
             <Form.Group className="mb-3 font-ph font-20px" controlId="cad-departament">

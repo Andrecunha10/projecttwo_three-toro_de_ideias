@@ -10,7 +10,7 @@ export const login = async (credentials) => {
     const data = await response.json()
     if (!response.ok) {
         console.log(data)
-        const message = data === 'Incorrect password' || data ==='Cannot find user'
+        const message = data === 'Incorrect password' || data ==='Cannot find user' || data === 'Password is too short'
             ? 'Credentias invalid.'
             : 'Response not ok.'
         throw new Error(message)
