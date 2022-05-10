@@ -86,7 +86,7 @@ h1, h2, h3, p, a{
     background-color: var(--bs-purple);
     border-color: var(--bs-purple);
 }
-td button{
+td button, td a{
     width: 65px;
 }
 

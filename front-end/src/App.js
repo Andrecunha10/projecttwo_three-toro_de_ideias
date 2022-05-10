@@ -22,7 +22,14 @@ function App() {
           </RequireAuth>
         }
       />
-      <Route path="/dashboard/problemas" element={<PageManageProblems/>} />
+      <Route 
+        path="/dashboard/problemas" 
+        element={
+          <RequireAuth userTypes={[1]}>
+            <PageManageProblems/>
+          </RequireAuth>
+        } 
+      />
       <Route path="/login" element={<LoginPage />}/>
       <Route path='*' element={<PageNotFound />} />
     </Routes>

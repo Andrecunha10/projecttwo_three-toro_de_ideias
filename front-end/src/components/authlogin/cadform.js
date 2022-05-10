@@ -7,6 +7,7 @@ import { cadUser } from "../../services/users.service";
 import { userLogin } from "../../store/user/user.actions";
 
 export function CadForm ( { redirectAfterLogin}) {
+    const [isSubmiting, setIsSubimiting] = useState(false)
     const [formData, setFormData] = useState({
         name: '',
         nickname: '',
@@ -59,6 +60,7 @@ export function CadForm ( { redirectAfterLogin}) {
             }    
         } 
         try{
+            setIsSubimiting(true)
             const userData= await cadUser(newFormData)
             dispatch(userLogin(userData))
             if (redirectAfterLogin) {
@@ -67,6 +69,7 @@ export function CadForm ( { redirectAfterLogin}) {
 
         } catch (error){
             console.error(error)
+            setIsSubimiting(false)
             switch(error.message){
                 case 'Email already exists':
                     return toast.info('E-mail já cadastrado', {
@@ -80,7 +83,7 @@ export function CadForm ( { redirectAfterLogin}) {
                     return toast.error('Falha ao fazer cadastro. Tente novamente', {
                         theme: "colored"
                     })
-            }
+            } 
         }
      }
 
@@ -155,7 +158,7 @@ export function CadForm ( { redirectAfterLogin}) {
                     onChange={handleChange}
                 />
             </Form.Group>
-            <Button variant="dark" type="submit" className="font-ph font-20px">
+            <Button variant="dark" type="submit" className="font-ph font-20px" disabled={isSubmiting}>
                 Criar Conta
             </Button>
         </Form>

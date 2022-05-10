@@ -7,6 +7,7 @@ import { login } from "../../services/users.service";
 import { userLogin } from "../../store/user/user.actions";
 
 export function LoginForm ( { redirectAfterLogin} ){
+    const [isSubmiting, setIsSubimiting] = useState(false)
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -23,8 +24,8 @@ export function LoginForm ( { redirectAfterLogin} ){
     const handleSubmit = async (event) =>{
         event.preventDefault()
         try{
-            const userData = await login(formData)
-            
+            setIsSubimiting(true)
+            const userData = await login(formData)            
             //SEND TO REDUX
             dispatch(userLogin(userData))
             if (redirectAfterLogin) {
@@ -32,6 +33,7 @@ export function LoginForm ( { redirectAfterLogin} ){
             }
         } catch (error){
             console.error(error)
+            setIsSubimiting(false)
             if (error.message === 'Credentias invalid.') {
                 return toast.info('E-mail ou senha inválidos', {
                         theme: "colored"
@@ -41,7 +43,7 @@ export function LoginForm ( { redirectAfterLogin} ){
                     theme: "colored"
                     })
             }
-        }
+        }  
     }   
     return (
         <Form onSubmit={handleSubmit}>
@@ -68,7 +70,7 @@ export function LoginForm ( { redirectAfterLogin} ){
                     onChange={handleChange}
                 />
             </Form.Group>
-            <Button variant="dark" type="submit" className="font-ph font-20px">
+            <Button variant="dark" type="submit" className="font-ph font-20px" disabled={isSubmiting}>
                 Entrar
             </Button>
         </Form>
