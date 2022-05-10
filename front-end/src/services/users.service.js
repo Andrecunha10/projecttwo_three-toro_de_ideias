@@ -15,14 +15,41 @@ export const login = async (credentials) => {
             : 'Response not ok.'
         throw new Error(message)
     }
+    return AuthResponse(data)
+}
+
+export const logout = () => {
+    removeStorageItem('user')
+}
+
+export const cadUser = async(formData) =>{
+    const body = JSON.stringify({
+        ...formData,
+        type: 2
+    })
+    const response = await fetch(`${apiUrl}/signup`, {
+        method: 'POST',
+        body,
+        headers:{
+            'content-type': 'application/json'
+        }
+    })
+    const data = await response.json()
+
+    if(!response.ok) {
+        const message = data !== 'Password is too short' && data !== 'Email already exists'
+            ? 'Response not ok.'
+            : data
+            throw new Error(message);
+    }
+    return AuthResponse(data)
+}
+
+const AuthResponse = (data) => {
     const userData = {
         accessToken: data.accessToken,
         ...data.user
     }
     setStorageItem('user', JSON.stringify(userData))
     return userData
-}
-
-export const logout = () => {
-    removeStorageItem('user')
 }

@@ -3,17 +3,16 @@ import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { cadUser } from "../../services/caduser.service";
+import { cadUser } from "../../services/users.service";
 import { userLogin } from "../../store/user/user.actions";
 
-export function CadForm () {
+export function CadForm ( { redirectAfterLogin}) {
     const [formData, setFormData] = useState({
         name: '',
         nickname: '',
         departament: '',
         email: '',
-        password: '',
-        type: 2
+        password: ''
     })
     const [submiting, setSubmiting] = useState({
         required: true,
@@ -62,7 +61,9 @@ export function CadForm () {
         try{
             const userData= await cadUser(newFormData)
             dispatch(userLogin(userData))
-            navigate('/dashboard')
+            if (redirectAfterLogin) {
+                navigate('/dashboard')
+            }
 
         } catch (error){
             console.error(error)

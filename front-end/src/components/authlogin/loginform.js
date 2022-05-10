@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { login } from "../../services/users.service";
 import { userLogin } from "../../store/user/user.actions";
 
-export function LoginForm (){
+export function LoginForm ( { redirectAfterLogin} ){
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -27,7 +27,9 @@ export function LoginForm (){
             
             //SEND TO REDUX
             dispatch(userLogin(userData))
-            navigate('/dashboard')
+            if (redirectAfterLogin) {
+                navigate('/dashboard')
+            }
         } catch (error){
             console.error(error)
             if (error.message === 'Credentias invalid.') {

@@ -3,17 +3,17 @@ import styled from "styled-components";
 import { CadForm } from "./cadform";
 import { LoginForm } from "./loginform";
 
-export function AlthLogin(){
+export function AlthLogin({ redirectAfterLogin = true }){
     return(
         <Row>
             <Col xs={12} lg='auto' className="flex-fill">
-                <LoginForm />
+                <LoginForm redirectAfterLogin={redirectAfterLogin}/>
             </Col>
             <StyledCol className='font-pm text-center p-3 p-lg-5 align-self-center' xs={12} lg='auto' >
                 Ou
             </StyledCol>
             <Col xs={12} lg='auto' className="flex-fill">
-                <CadForm />
+                <CadForm redirectAfterLogin={redirectAfterLogin}/>
             </Col>
         </Row>
     )
