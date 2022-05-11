@@ -1,5 +1,6 @@
 import { CloseButton, Nav } from "react-bootstrap"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { selectUser } from "../../store/user/user.selectors"
 import { SidebarItens } from "./sidebaritem"
@@ -23,7 +24,7 @@ export function Sidebar ({isOpen, onClose}) {
     return (
         <SidebarStyled className="text-white d-flex flex-column p-3" isOpen={isOpen}>
             <CloseButton variant="white"  className='ms-auto d-md-none' onClick={onClose} />
-            <p className="h1 font-pm text-white">Toró de Ideias!</p>
+            <Link to='/' className="h1 font-pm text-white text-decoration-none">Toró de Ideias!</Link>
             <Nav variant="pills" className="flex-column">
                 {filterMenuItens.map((item, index) => (
                     <SidebarItens key={index} item={item}/>

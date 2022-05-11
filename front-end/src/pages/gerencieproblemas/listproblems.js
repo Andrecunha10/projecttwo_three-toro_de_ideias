@@ -1,18 +1,25 @@
-import { Button, Table } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Modal, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { deleteProblemById } from "../../services/problems.service";
 
 export function ListProblems( {problems, onDeleteProblems} ){
-    const deleteProblem = async (event) =>{
+    const [problemToDelete, setProblemToDelete] = useState()
+    const handleClose = () => setProblemToDelete(undefined)
+    const clickDelete = (problem) =>{
+        setProblemToDelete(problem)
+    }
+    const deleteProblem = async () =>{
         try{
-            await deleteProblemById(event.id)
+            await deleteProblemById(problemToDelete.id)
             await onDeleteProblems()
             toast.success('Problema excluido com sucesso.')
         } catch (error){
             console.error(error)
             toast.error('Falha ao deletar problema, tente novamente.')
         }
+        handleClose()
     }
     return (
         <>
@@ -43,7 +50,7 @@ export function ListProblems( {problems, onDeleteProblems} ){
                                 >Editar</Button>
                                 <Button 
                                     className="btn-sm"
-                                    onClick={() => deleteProblem(problem)}
+                                    onClick={() => clickDelete(problem)}
                                 >Deletar</Button>
                             </div>
                         </td>
@@ -51,6 +58,20 @@ export function ListProblems( {problems, onDeleteProblems} ){
                     ))}
                 </tbody>
             </Table>
+            <Modal show={problemToDelete} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Tem certeza que deseja excluir?</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Ao clicar em confirmar, o problema <strong>{problemToDelete?.name}</strong> será deletado definitivamente. Deseja prosseguir?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="dark" onClick={handleClose}>
+                        Cancelar
+                    </Button>
+                    <Button onClick={deleteProblem}>
+                        Deletar problema
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

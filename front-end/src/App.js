@@ -7,6 +7,7 @@ import { MainHome } from "./pages/home";
 import { LoginPage } from "./pages/login";
 import { PageNotFound } from "./pages/notfound";
 import { PageProblem } from "./pages/problema";
+import { AddPrblemPage } from "./pages/adcionaproblema"
 
 function App() {
   return (
@@ -27,6 +28,14 @@ function App() {
         element={
           <RequireAuth userTypes={[1]}>
             <PageManageProblems/>
+          </RequireAuth>
+        } 
+      />
+      <Route 
+        path="/dashboar/problemas/cadastrar" 
+        element={
+          <RequireAuth userTypes={[1]}>
+            <AddPrblemPage />
           </RequireAuth>
         } 
       />

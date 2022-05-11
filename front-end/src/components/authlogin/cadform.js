@@ -133,7 +133,6 @@ export function CadForm ( { redirectAfterLogin}) {
                     <option value="Prd">Produção</option>
                     <option value="RH">Recursos Humanos</option>
                     <option value="TI">Tecnologia da Informação</option>
-                    value
                 </Form.Control>
             </Form.Group>
             <Form.Group className="mb-3 font-ph font-20px" controlId="cad-email">
