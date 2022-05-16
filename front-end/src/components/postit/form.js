@@ -7,7 +7,7 @@ import { AlthLogin } from "../authlogin"
 import { toast } from "react-toastify"
 
 
-export function PostItForm( {problemId, onRegistrer}){
+export function PostItForm( {problem, onRegistrer}){
     const user = useSelector(selectUser)
     const [formData, setFormData] = useState('')
     const [submiting, setSubimiting] = useState(false)
@@ -24,8 +24,11 @@ export function PostItForm( {problemId, onRegistrer}){
                 message: formData,
                 name: user.nickname,
                 departament: user.departament,
-                problemId: parseInt(problemId),
-                userId: user.id
+                problemId: parseInt(problem.id),
+                userId: user.id,
+                problemName: problem.name,
+                problemDepartament: problem.departament,
+                problemDescription: problem.shortDescription
             })
             toast.success('Sugestão cadastrada com Sucesso!')
             setFormData('')

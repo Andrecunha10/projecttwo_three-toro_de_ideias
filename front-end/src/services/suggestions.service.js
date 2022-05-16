@@ -13,3 +13,45 @@ export const createSuggestion = async (suggestionData) => {
         throw new Error('Response not ok.')
     }
 }
+
+export const getSuggestionUser= async () => {
+    const response = await fetch(`${apiUrl}/suggestions`)
+
+    if(!response.ok) {
+        throw new Error('Response not ok.')
+    }
+    return response.json()
+}
+
+export const deleteSuggestionById = async (suggestionId) =>{
+    const response = await fetch(`${apiUrl}/suggestions/${suggestionId}`, {
+        method: 'DELETE',
+        headers: authorizationHeaders()
+    })
+    if(!response.ok) {
+        throw new Error('Response not ok.')
+    }
+}
+
+export const getSuggestionById = async (suggestionId) => {
+    const response = await fetch(`${apiUrl}/suggestions/${suggestionId}`)
+
+    if(!response.ok) {
+        throw new Error('Response not ok.')
+    }
+    return response.json()
+}
+
+export const updateSuggestion = async (suggestionData, suggestionId) => {
+    const response = await fetch(`${apiUrl}/suggestions/${suggestionId}`, {
+        method: 'PATCH',
+        body: JSON.stringify(suggestionData),
+        headers: {
+            'content-type': 'application/json',
+            ...authorizationHeaders()
+        }
+    })
+    if (!response.ok) {
+        throw new Error('Response not ok.')
+    }
+}

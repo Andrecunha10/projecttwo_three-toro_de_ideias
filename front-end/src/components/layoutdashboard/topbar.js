@@ -27,7 +27,6 @@ export function TopBar ({onOpen}) {
                         <Dropdown align='end'>
                             <Dropdown.Toggle variant="transparent" className="text-white font-20px">{user.nickname || user.name}</Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item>Alterar Dados</Dropdown.Item>
                                 <Dropdown.Item onClick={handleLogout}>Sair</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>

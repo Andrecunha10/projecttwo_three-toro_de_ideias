@@ -25,7 +25,7 @@ export function ListProblems( {problems, onDeleteProblems} ){
         <>
             <div className="d-md-flex mt-4 gap-5 align-center">
                 <h1 className="font-ph">Gerenciar Problemas</h1>
-                <Button as={Link} to='/dashboar/problemas/cadastrar' variant="dark my-auto">Novo Problema</Button>
+                <Button as={Link} to='/dashboard/problemas/cadastrar' variant="dark my-auto">Novo Problema</Button>
             </div>
             <Table className="font-ph font-20px mt-3" striped hover responsive>
                 <thead>
@@ -46,7 +46,7 @@ export function ListProblems( {problems, onDeleteProblems} ){
                                     variant="dark" 
                                     className="btn-sm"
                                     as={Link}
-                                    to={`/dashboar/problemas/editar/${problem.id}`}
+                                    to={`/dashboard/problemas/${problem.id}`}
                                 >Editar</Button>
                                 <Button 
                                     className="btn-sm"

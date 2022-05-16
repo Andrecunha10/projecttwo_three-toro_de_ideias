@@ -9,12 +9,20 @@ const menuItens = [
     {
         to: '/dashboard',
         text: 'Dashboard',
+        checkAllPath: true,
         userTypes:[1, 2]
     },
     {
         to: '/dashboard/problemas',
         text: 'Problemas',
+        checkAllPath: false,
         userTypes:[1]
+    },
+    {
+        to: '/dashboard/sugestoes',
+        text: 'Sugestões',
+        checkAllPath: false,
+        userTypes:[1, 2]
     }
 ]
 
@@ -36,7 +44,7 @@ export function Sidebar ({isOpen, onClose}) {
 
 const SidebarStyled = styled.header`
     background-color: var(--main-color);
-    width: 280px;
+    width: 330px;
     @media (max-width: 767px){
         position: fixed;
         top: 0;

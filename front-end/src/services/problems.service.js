@@ -26,16 +26,30 @@ export const deleteProblemById = async (problemId) => {
     }
 }
 
-export const createProblem = async (formData) => {
+export const createProblem = async (problemData) => {
     const response = await fetch(`${apiUrl}/problems`, {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(problemData),
         headers: {
             'content-type': 'application/json',
             ...authorizationHeaders()
         }
     })
     if (!response.ok){
+        throw new Error('Response not ok.')
+    }
+}
+
+export const updateProblem = async (problemData, problemId) => {
+    const response = await fetch(`${apiUrl}/problems/${problemId}`, {
+        method: 'PUT',
+        body: JSON.stringify(problemData),
+        headers: {
+            'content-type': 'application/json',
+            ...authorizationHeaders()
+        }
+    })
+    if (!response.ok) {
         throw new Error('Response not ok.')
     }
 }

@@ -8,6 +8,9 @@ import { LoginPage } from "./pages/login";
 import { PageNotFound } from "./pages/notfound";
 import { PageProblem } from "./pages/problema";
 import { AddPrblemPage } from "./pages/adcionaproblema"
+import { EditProblemPage } from "./pages/editaproblema";
+import { SuggestionUserPage } from "./pages/consutasugestoes";
+import { EditSuggestionPage } from "./pages/editsuggestion";
 
 function App() {
   return (
@@ -32,12 +35,36 @@ function App() {
         } 
       />
       <Route 
-        path="/dashboar/problemas/cadastrar" 
+        path="/dashboard/problemas/cadastrar" 
         element={
           <RequireAuth userTypes={[1]}>
             <AddPrblemPage />
           </RequireAuth>
         } 
+      />
+      <Route 
+        path="/dashboard/problemas/:id" 
+        element={
+          <RequireAuth userTypes={[1]}>
+            <EditProblemPage />
+          </RequireAuth>
+        } 
+      />
+      <Route 
+        path="/dashboard/sugestoes" 
+        element={
+          <RequireAuth>
+            <SuggestionUserPage />
+          </RequireAuth>
+        }
+      />
+      <Route 
+        path="/dashboard/sugestoes/:id" 
+        element={
+          <RequireAuth>
+            <EditSuggestionPage />
+          </RequireAuth>
+        }
       />
       <Route path="/login" element={<LoginPage />}/>
       <Route path='*' element={<PageNotFound />} />

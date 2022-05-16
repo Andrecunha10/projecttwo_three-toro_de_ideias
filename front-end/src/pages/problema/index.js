@@ -46,7 +46,7 @@ export function PageProblem(){
                         <h2 className='font-pm fw-bold'>Sugestões do Time</h2>
                         
                             <PostItProblem problem={problem.suggestions}/>
-                            <PostItForm problemId={id} onRegistrer={fetchProblem}/>
+                            <PostItForm problem={problem} onRegistrer={fetchProblem}/>
                         </>
                     )}
                     

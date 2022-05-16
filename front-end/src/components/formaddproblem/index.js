@@ -1,19 +1,18 @@
 import { useState } from "react"
 import { Button, Form } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
-import styled from "styled-components"
-import { createProblem } from "../../services/problems.service"
 
-export const FormAddEditProblem = () => {
-    const[formData, setFormData] = useState({
+const emptyFormData = {
         name: '',
         shortDescription: '',
         description: '',
         departament: ''
-    })
+}
 
-    const navigate = useNavigate()
+export const FormAddEditProblem = ({initialValue = emptyFormData, buttonLabel = 'Cadastrar', onSubmit}) => {
+    
+    
+    
+    const[formData, setFormData] = useState(initialValue)
 
     const handleChange = (event) => {
         setFormData({
@@ -21,23 +20,14 @@ export const FormAddEditProblem = () => {
             [event.target.name]: event.target.value
         })
     }
-    const handleSubmit = async (event) =>{
+    const handleSubmit = (event) =>{
         event.preventDefault()
-        try{
-            await createProblem(formData)
-            navigate('/dashboard/problemas')
-            console.log('cadastrou')
-        } catch (error) {
-            console.error(error)
-            toast.error('Não foi possível realizar o cadastro. Tente novamente', {
-                theme: 'colored'
-            })
-        }
+        onSubmit(formData)
     }
     return (
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3 font-ph font-20px" controlId="problem-name">
-                <Form.Label className="mb-0">Nome</Form.Label>
+                <Form.Label className="mb-0">Nome do problema</Form.Label>
                 <Form.Control
                     type="text"
                     placeholder="Nome do problema"
@@ -50,7 +40,7 @@ export const FormAddEditProblem = () => {
             <Form.Group className="mb-3 font-ph font-20px" controlId="problem-departament">
                 <Form.Label className="mb-0">Departamento</Form.Label>
                 <Form.Control as='select' name="departament" required onChange={handleChange}>
-                    <option value="">Selecione seu departamento</option>
+                    <option value={formData.departament}>{formData.departament || 'Selecione seu departamento'}</option>
                     <option value="Administrativo">Administrativo</option>
                     <option value="Comercial">Comercial</option>
                     <option value="Custumer Services">Custumer Services</option>
@@ -63,34 +53,31 @@ export const FormAddEditProblem = () => {
                     <option value="Tecnologia da Informação">Tecnologia da Informação</option>
                 </Form.Control>
             </Form.Group>
-            <Form.Group className="mb-3 font-ph" controlId="problem-short-description">
+            <Form.Group className="mb-0 font-ph" controlId="problem-short-description">
                 <Form.Label className="mb-0 font-20px">Descrição Curta</Form.Label>
-                <StyledTextarea
-                    className="w-100"
+                <Form.Control
+                    as='textarea'
                     name="shortDescription"
                     placeholder="Texto que aparecerá na lista de problemas, na página Colaboração"
                     maxLength="50"
                     required
                     value={formData.shortDescription}
                     onChange={handleChange}
-                ></StyledTextarea>
+                ></Form.Control>
+                <p className="font-ph text-end mb-0">{formData.shortDescription.length} / 50</p>
             </Form.Group>
             <Form.Group className="mb-3 font-ph" controlId="problem-description">
                 <Form.Label className="mb-0 font-20px">Descrição</Form.Label>
-                <StyledTextarea
-                    className="w-100"
+                <Form.Control
+                    as='textarea'
                     name="description"
                     placeholder="Texto que aparecerá na tela de sugestões."
                     required
                     value={formData.description}
                     onChange={handleChange}
-                ></StyledTextarea>
+                ></Form.Control>
             </Form.Group>
-            <Button type="subimit" variant="dark" className="font-ph font-20px">Cadastrar</Button>
+            <Button type="subimit" variant="dark" className="font-ph font-20px">{buttonLabel}</Button>
         </Form>
     )
 }
-
-const StyledTextarea = styled.textarea`
-    resize: none;
-`
