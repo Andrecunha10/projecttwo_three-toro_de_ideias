@@ -13,6 +13,8 @@ export function EditSuggestionPage() {
     const { id } = useParams()
     const [suggestion, setSuggestion] = useState()
     const navigate = useNavigate()
+    
+    
     useEffect(() => {
         const fetchSuggestion = async () => {
             try {
@@ -21,15 +23,13 @@ export function EditSuggestionPage() {
                     setSuggestion(data)
                 } else {
                     navigate('/dashboard/sugestoes')
-                }
-                
+                }                
             } catch (error) {
-                console.error(error)
                 toast.error('Falha ao buscar dados da sugestão. Recarregue a página')
             }
         }
         fetchSuggestion()
-    }, [id])
+    }, [id, navigate, user.id])
 
 
     const handleChange = (event) => {
@@ -39,13 +39,17 @@ export function EditSuggestionPage() {
         })
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+        event.preventDefault()
         try {
-            await updateSuggestion(suggestion, id)
+            await updateSuggestion(suggestion)
+            toast.success('Sugestão alterada com sucesso.')
             navigate('/dashboard/sugestoes')
         } catch (error) {
             console.error(error)
-            toast.error('Falha ao alterar o problema. Tente novamente')
+            toast.error('Falha ao alterar a sugestão. Tente novamente', {
+                theme:'colored'
+            })
         }
     }
 

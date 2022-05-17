@@ -42,10 +42,10 @@ export const getSuggestionById = async (suggestionId) => {
     return response.json()
 }
 
-export const updateSuggestion = async (suggestionData, suggestionId) => {
-    const response = await fetch(`${apiUrl}/suggestions/${suggestionId}`, {
-        method: 'PATCH',
-        body: JSON.stringify(suggestionData),
+export const updateSuggestion = async (suggestion) => {
+    const response = await fetch(`${apiUrl}/suggestions/${suggestion.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(suggestion),
         headers: {
             'content-type': 'application/json',
             ...authorizationHeaders()
