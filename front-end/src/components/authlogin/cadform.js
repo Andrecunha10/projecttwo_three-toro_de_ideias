@@ -50,17 +50,17 @@ export function CadForm ( { redirectAfterLogin}) {
     const navigate = useNavigate()
 
     const handleSubmit = async (event) =>{
-        let newFormData = formData
-        event.preventDefault()
+        event.preventDefault()  
+        let newFormData = formData      
+        setIsSubimiting(true)
         if (formData.nickname === '') {
             const setNickname = formData.name.split(' ')
             newFormData ={
                 ...formData,
-                nickname: setNickname[0]
+                nickname: setNickname[0].slice(0,13)
             }    
         } 
         try{
-            setIsSubimiting(true)
             const userData= await cadUser(newFormData)
             dispatch(userLogin(userData))
             if (redirectAfterLogin) {
@@ -111,13 +111,17 @@ export function CadForm ( { redirectAfterLogin}) {
                     value={formData.nickname}
                     onChange={handleChange}
                     disabled={submiting.disabled}
+                    maxLength={13}
                 />
-                <Form.Check 
-                    type="switch"
-                    id="custom-switch"
-                    label="Não informar apelido"
-                    onChange={notNickname}
-                />
+                <div className="w-100 d-flex justify-content-between pe-1">
+                    <Form.Check 
+                        type="switch"
+                        id="custom-switch"
+                        label="Não informar apelido"
+                        onChange={notNickname}
+                    />
+                    <Form.Text>{formData.nickname.length}/13</Form.Text>
+                </div>
             </Form.Group>
             <Form.Group className="mb-3 font-ph font-20px" controlId="cad-departament">
                 <Form.Label className="mb-0">Departamento</Form.Label>
