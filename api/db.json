@@ -35,6 +35,9 @@
       "name": "André Cunha",
       "departament": "Dev",
       "problemId": 1,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 1
     },
     {
@@ -42,6 +45,10 @@
       "name": "Chico",
       "departament": "Mkt",
       "problemId": 1,
+      "userId": 1,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 2
     },
     {
@@ -49,6 +56,10 @@
       "name": "André Cunha",
       "departament": "Dev",
       "problemId": 1,
+      "userId": 2,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 3
     },
     {
@@ -56,21 +67,44 @@
       "name": "Chico",
       "departament": "Mkt",
       "problemId": 1,
+      "userId": 1,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 4
     },
     {
-      "message": "Eu prefiro ser, esta metamorfose ambulante.",
-      "name": "Raul Seixas",
-      "departament": "TI",
-      "problemId": 1,
-      "id": 5
+      "message": "Eu vou mudar tudo que não me convém. Hoje eu tenho tudo que eu poderia querer, mas dinheiro não é tudo eu tenho muito a fazer.",
+      "name": "André Cunha",
+      "departament": "Dev",
+      "problemId": 3,
+      "userId": 2,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
+      "id": 7
     },
     {
-      "message": "Eu vou, mudar tudo que não me comvém.",
-      "name": "Chorão",
-      "departament": "CB",
+      "message": "Eu prefiro ser, esta metamorfose ambulante.",
+      "name": "André Cunha",
+      "departament": "Dev",
+      "problemId": 1,
+      "userId": 2,
+      "problemName": "Hora Extra",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Elevado custo com horas extras",
+      "id": 8
+    },
+    {
+      "message": "Brindo a casa, brindo a vida, meus valores, minha família.",
+      "name": "Jéssica",
+      "departament": "RH",
       "problemId": 2,
-      "id": 6
+      "userId": 3,
+      "problemName": "Reclamação Clientes",
+      "problemDepartament": "Custumer Service",
+      "problemDescription": "Aumento do número de reclamações de clientes",
+      "id": 9
     }
   ],
   "users": [
@@ -91,6 +125,15 @@
       "departament": "Dev",
       "type": 1,
       "id": 2
+    },
+    {
+      "email": "jessica@torodeideias.com.br",
+      "password": "$2a$10$KxKNpI7OWJIDpO3XXlFQDe3ITWjA6DJ9r6jsSNT2uolxLsPS5cPaS",
+      "name": "Jéssica Camargo Barrochelo da Cunha",
+      "nickname": "Jéssica",
+      "departament": "RH",
+      "type": 2,
+      "id": 3
     }
   ]
 }
