@@ -5,8 +5,9 @@
 <br />
 <div align="center">
   <a href="https://torodeideias.netlify.app/">
-    <img src="assets/img/logo_lampada.svg" alt="Logo Lampada" width="60" height="63">
+    <img src="front-end/public/logo_lampada.svg" alt="Logo Lampada" width="60" height="63">
   </a>
+  <br />
   <a href="https://torodeideias.netlify.app/">
     <img src="front-end/public/toro_ideias_black.svg"/>
   </a>  
