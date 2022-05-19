@@ -19,47 +19,9 @@ h1, h2, h3, p, a{
     color: var(--main-color);
 }
 
-.nav-header{
-    background: linear-gradient(94.37deg, rgba(43, 38, 38, 0.85) 0.43%, #2B2628 60%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.5rem;
+.bg-main-color{
+    background-color: var(--main-color);
 }
-
-.nav-header .navbar-toggler{
-    background-color: #fff;
-    color: #fff;
-}
-
-.nav-header .show .nav-link{
-    border-bottom: #fff 1px solid;
-}
-
-.footer{
-    background: linear-gradient(94.37deg, rgba(43, 38, 38, 0.85) 0.43%, #2B2628 60%);
-}
-
-.footer-container{
-    display: flex;
-    gap: 10px;
-    flex-direction: column-reverse;
-    align-items: center;
-    min-width: 60px;
-}
-
-.footer-container div{
-    display: flex;
-    gap: 10px;
-}
-
-
-@media (min-width: 576px) {
-    .footer-container {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-}
-
 .font-pm{
     font-family: 'Permanent Marker', sans-serif;
 }
@@ -71,6 +33,11 @@ h1, h2, h3, p, a{
 .font-20px{
     font-size: 1.25rem;
 }
+
+.font-24px{
+    font-size: 1.5rem;
+}
+
 .line-height-1{
     line-height: 1;
 }
@@ -81,6 +48,46 @@ h1, h2, h3, p, a{
 
 .flex-1{
     flex: 1;
+}
+.offcanvas-end{
+    width: 100%;
+}
+
+.navbar-toggler:focus, .btn-check:focus+.btn, .btn:focus, .form-control:focus, .form-check-input:focus{
+    box-shadow: none;
+}
+.navbar-light .navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler{
+    font-size: 2rem;
+}
+
+.btn-close{
+    opacity: 1;
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url('../../../public/hamburguer_menu_vector3.png');
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-dark);
+    border-color: var(--bs-dark);
+}
+
+.btn-primary {
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+}
+td button, td a{
+    width: 65px;
 }
 
 iframe{

@@ -1,9 +1,9 @@
-export function PostItProblem({pb}){
+export function PostItProblem({problem}){
     return (
         <> 
-            {pb.length > 0 ? (
+            {problem.length > 0 ? (
                 <div className="colaboration-css display-grid-problem justify-content-center mt-4 gap-4">
-                    {pb.map (problem => (
+                    {problem.map (problem => (
                         <div key={problem.id} className='post-it p-3 font-20px pi-problem-size'>
                             <p className='font-ph mb-1 line-height-1'>{problem.message}</p>
                             <p className='font-pm fw-bold text-center position-absolute bottom-0 end-0 pe-3'>{problem.name} - {problem.departament}</p>

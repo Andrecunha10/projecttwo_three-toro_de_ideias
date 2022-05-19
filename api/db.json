@@ -1,5 +1,5 @@
 {
-  "collaborations": [
+  "problems": [
     {
       "name": "Hora Extra",
       "shortDescription": "Elevado custo com horas extras",
@@ -29,34 +29,111 @@
       "id": 4
     }
   ],
-  "problems": [
+  "suggestions": [
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "André Cunha",
       "departament": "Dev",
-      "collaborationId": 1,
+      "problemId": 1,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 1
     },
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "Chico",
       "departament": "Mkt",
-      "collaborationId": 1,
+      "problemId": 1,
+      "userId": 1,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 2
     },
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "André Cunha",
       "departament": "Dev",
-      "collaborationId": 1,
+      "problemId": 1,
+      "userId": 2,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 3
     },
     {
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at eros convallis, congue justo ut, iaculis ex. Proin vel sollicitudin purus. Sed id blandit risus. In vitae ultricies nisi. Phasellus nibh orci, pellentesque sit amet molestie sed, condimentum id est.",
       "name": "Chico",
       "departament": "Mkt",
-      "collaborationId": 1,
+      "problemId": 1,
+      "userId": 1,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
       "id": 4
+    },
+    {
+      "message": "Eu vou mudar tudo que não me convém. Hoje eu tenho tudo que eu poderia querer, mas dinheiro não é tudo eu tenho muito a fazer.",
+      "name": "André Cunha",
+      "departament": "Dev",
+      "problemId": 3,
+      "userId": 2,
+      "problemName": "Atrasos na Chegada",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Funcinários chegam atrasados no posto de trabalho",
+      "id": 7
+    },
+    {
+      "message": "Eu prefiro ser, esta metamorfose ambulante.",
+      "name": "André Cunha",
+      "departament": "Dev",
+      "problemId": 1,
+      "userId": 2,
+      "problemName": "Hora Extra",
+      "problemDepartament": "Recursos Humanos",
+      "problemDescription": "Elevado custo com horas extras",
+      "id": 8
+    },
+    {
+      "message": "Brindo a casa, brindo a vida, meus valores, minha família.",
+      "name": "Jéssica",
+      "departament": "RH",
+      "problemId": 2,
+      "userId": 3,
+      "problemName": "Reclamação Clientes",
+      "problemDepartament": "Custumer Service",
+      "problemDescription": "Aumento do número de reclamações de clientes",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "email": "colaborador@colaborador.com",
+      "password": "$2a$10$zw9eaFE/dYdMXmXVNmKUUOT60akWlIpc9vIY.4T.usl6plSRZ88YC",
+      "name": "Francisco Chagas",
+      "nickname": "Chico",
+      "departament": "RH",
+      "type": 2,
+      "id": 1
+    },
+    {
+      "email": "admin@admin.com",
+      "password": "$2a$10$aub/u5L8su1BH5NitEzs2OlW144FbdnGtnchK6EMlGRHEDhBm97ya",
+      "name": "André Luiz da Cunha",
+      "nickname": "André Cunha",
+      "departament": "Dev",
+      "type": 1,
+      "id": 2
+    },
+    {
+      "email": "jessica@torodeideias.com.br",
+      "password": "$2a$10$KxKNpI7OWJIDpO3XXlFQDe3ITWjA6DJ9r6jsSNT2uolxLsPS5cPaS",
+      "name": "Jéssica Camargo Barrochelo da Cunha",
+      "nickname": "Jéssica",
+      "departament": "RH",
+      "type": 2,
+      "id": 3
     }
   ]
 }

@@ -5,20 +5,17 @@ import { MainLayout } from "../../components/layout";
 import { Loading } from "../../components/loading";
 import { PostItForm } from "../../components/postit/form";
 import { PostItProblem } from "../../components/postit/problems";
+import { getProblemsById } from "../../services/problems.service";
 import { PageNotFound } from "../notfound";
 
 export function PageProblem(){
-    const params = useParams()
+    const {id} = useParams()
     const [problem, setProblem] = useState()
     const [loading, setLoading] = useState(true)
     const [errorMsg, setErrorMsg] = useState()
     const fetchProblem = useCallback( async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/collaborations/${params.id}?_embed=problems`)
-            if(!response.ok) {
-                throw new Error('Response not ok.')
-            }
-            const data = await response.json()
+            const data = await getProblemsById(id)
             setProblem(data)
             setLoading(false)
         } catch (error) {
@@ -26,7 +23,7 @@ export function PageProblem(){
             setErrorMsg(message)
             setLoading(false)
         }
-    }, [params.id])
+    }, [id])
     useEffect(() => {
         fetchProblem()
     }, [fetchProblem])
@@ -48,9 +45,8 @@ export function PageProblem(){
                         <p className='font-ph font-20px'><strong>Área de Atuação:</strong> {problem?.departament}</p>
                         <h2 className='font-pm fw-bold'>Sugestões do Time</h2>
                         
-                            <PostItProblem pb={problem.problems}/>
-
-                            <PostItForm collaborationId={params.id} onRegistrer={fetchProblem}/>
+                            <PostItProblem problem={problem.suggestions}/>
+                            <PostItForm problem={problem} onRegistrer={fetchProblem}/>
                         </>
                     )}
                     
